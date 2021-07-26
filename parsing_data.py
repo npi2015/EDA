@@ -40,6 +40,8 @@ df = exoplanetas.groupby(['pl_name']).agg({'ast_flag': 'first',
                                            'tran_flag': 'max'
                                            }).reset_index()
 
+df.to_json('test.json')
+
 planets_discovered_PT = exoplanetas[exoplanetas['tran_flag'] == 1]  # Transit methods
 planets_discovered_RV = exoplanetas[exoplanetas['rv_flag'] == 1]  # Radial velocity
 planets_discovered_pulsar = exoplanetas[exoplanetas['pul_flag'] == 1]  # Pulsar Timing variations
