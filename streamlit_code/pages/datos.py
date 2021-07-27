@@ -64,7 +64,7 @@ columns = pd.DataFrame({'ast_flag': '''Bandera indicando si la estrella se ha de
                                            'sy_snum': 'Número de estrellas en el sistema',
                                            'tran_flag': '''Bandera indicando si el planeta se ha detectado mediante 
                                            tránsito primario'''
-                                           }, index = [0]).T
+                                           }, index = ['Descripción']).T
 
 operations = pd.DataFrame({'ast_flag': 'first',
                                            'cb_flag': 'max',

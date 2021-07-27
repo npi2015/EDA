@@ -114,11 +114,13 @@ def app():
         st.write('Fuente: ESA')
 
     with st.beta_expander('Cambios en el brillo orbital'):
-        st.write('''Short-period planets in close orbits around their stars will undergo reflected light variations 
-        because, like the Moon, they will go through phases from full to new and back again. In addition, 
-        as these planets receive a lot of starlight, it heats them, making thermal emissions potentially detectable. 
-        Since telescopes cannot resolve the planet from the star, they see only the combined light, 
-        and the brightness of the host star seems to change over each orbit in a periodic manner. Although the effect 
-        is small — the photometric precision required is about the same as to detect an Earth-sized planet in transit 
-        across a solar-type star – such Jupiter-sized planets with an orbital period of a few days are detectable by 
-        space telescopes such as the Kepler Space Observatory.''')
+        st.write('''Planetas con un periodo corto alrededor de una estrella experimentan variaciones en la luz que reflejan ya 
+        que, como la Luna, pasan por varias fases. También, ya que reciben mucha luz de su estrella, estos planetas 
+        se calientan, haciendo posible detectar sus emisiones térmicas. Al no poder resolver con un telescopio la luz 
+        del planeta y de la estrella (solo se ve la luz combinada de ambas), y la luz de la estrella parace cambiar 
+        en cada órbita de manera periódica, es posible detectar planetas del tamaño de Júpiter y con un periodo 
+        orbital de varios días se pueden detectar con telescopios espaciales como el Kepler Space Obsevatory. '''
+                 
+        '''Fuente: Wikipedia: Methods of detecting exoplanets''')
+
+
