@@ -24,6 +24,6 @@ El notebook es un draft, tiene comentarios míos y alguna celda que da error. Es
 
 ## Contacto
 
-Si hay cualquier duda o problema, por favor escribimde a cuco20011@gmail.com
+Si hay cualquier duda o problema, por favor escribimde a correo@gmail.com (no quiero poner el de verdad)
 
 
