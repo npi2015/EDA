@@ -56,22 +56,22 @@ def no_stars_plot():
 
 
 def hot_jupiters_plot():
-    hot_jupiters = df[(df['pl_massj'] > 1) & (df['pl_orbsmax'] < 1)]
+    hot_jupiters = df[(df['pl_massj'] > 1) & (df['pl_orbper'] < 10)]
 
-    hot_jupiters_chart = px.scatter(hot_jupiters, x='pl_orbsmax', y='pl_massj', color='discoverymethod',
+    hot_jupiters_chart = px.scatter(hot_jupiters, x='pl_orbper', y='pl_massj', color='discoverymethod',
                                     symbol='discoverymethod',
                                     title='Jupiters Calientes')
-    hot_jupiters_chart.update_xaxes(type="log", title='Semieje mayor (AU)')
+    hot_jupiters_chart.update_xaxes(type="log", title='Periodo orbital (días)')
     hot_jupiters_chart.update_yaxes(type="log", title='Masa (Masa de Jupiter)')
     return hot_jupiters_chart
 
 
 def hot_jupiter_overlay_plot():
-    df['hot jupiters'] = (df['pl_massj'] > 1) & (df['pl_orbsmax'] < 1)
+    df['hot jupiters'] = (df['pl_massj'] > 1) & (df['pl_orbper'] < 10)
 
-    HJ_overlay = px.scatter(df, x='pl_orbsmax', y='pl_massj', color='hot jupiters', title='Jupiters Calientes',
+    HJ_overlay = px.scatter(df, x='pl_orbper', y='pl_massj', color='hot jupiters', title='Jupiters Calientes',
                             labels={'hot jupiters': 'Jupiters Calientes'})
-    HJ_overlay.update_xaxes(type="log", title='Semieje mayor (AU)')
+    HJ_overlay.update_xaxes(type="log", title='Periodo orbital (días)')
     HJ_overlay.update_yaxes(type="log", title='Masa (Masa de Jupiter)')
     return HJ_overlay
 
@@ -177,7 +177,12 @@ detectar (o de confirmar). No significa que no existan este tipo de planetas. ''
         en nebulosas en las que se forman varios millones de estrellas algunas van a acabar juntas.''')
         st.plotly_chart(no_stars_plot())
     elif page == 'Júpiters Calientes':
-        overlay = st.button('Ver en overlay')
+        st.write('''Un Júpiter Caliente es un planeta que rstá cerca de su estrella (periodo orbital de menos de 10 
+        días) y tiene las caractéristicas de Júpiter (masa o tamaño). Estos planetas son fáciles de detectar debido a su
+        tamaño con métodos como el de tránsito primario, como se puede ver en la figura.'''
+        
+        '''También puedes darle al botón para ver cuantos planetas del total de la base de datos son Júpiters Calientes (230).''')
+        overlay = st.checkbox('Ver en overlay')
         if overlay:
             st.plotly_chart(hot_jupiter_overlay_plot())
         else:
@@ -191,7 +196,7 @@ detectar (o de confirmar). No significa que no existan este tipo de planetas. ''
                  detecciones desde la tierra en planetas que están cerca de la estrella, pero a medida que nos 
                  alejamos las detecciones desde telescopios terrestres se reducen. Esto se debe a la presencia de la 
                  atmósfera, que distorsiona la luz y hace estos planetas más díficiles de detectar.''')
-        mass_or_distance = st.button('Ver masa contra distancia a la estrella')
+        mass_or_distance = st.checkbox('Ver masa contra distancia a la estrella')
         if mass_or_distance:
             st.plotly_chart(discovery_site_dist_plot())
         else:

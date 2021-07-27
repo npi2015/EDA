@@ -40,7 +40,7 @@ def app():
 
     with st.beta_expander('Microlente gravitacional'):
         st.write('''Cuando una estrella poco luminosa se interpone ente la Tierra y una estrella más brillante, 
-        actúa como una lupa, creando dos imágenes de la estrella más brillante y creando dos imágenes. Esto es una 
+        actúa como una lupa, creando dos imágenes de la estrella más brillante. Esto es una 
         lente gravitacional.\n\n '''
 
                  '''Si hay un planeta orbitando la estrella menos luminosa, entonces está añade al efecto de lente 
@@ -53,7 +53,7 @@ def app():
         data_url = base64.b64encode(contents).decode("utf-8")
         gravitational_lens.close()
         st.markdown(
-            f'<img src="data:image/gif;base64,{data_url}" alt="gravitational_lens_gif" width = "1000">',
+            f'<img src="data:image/gif;base64,{data_url}" alt="gravitational_lens_gif" width = "650">',
             unsafe_allow_html=True,
         )
         st.write('''Fuente: De Lensshoe_hubble.jpg: ESA/Hubble &amp; NASAderivative work: Bulwersator (talk)
